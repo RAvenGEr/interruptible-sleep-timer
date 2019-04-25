@@ -39,7 +39,6 @@ public:
   ///
   void interrupt()
   {
-    std::unique_lock<std::mutex> lock(mutex_, std::adopt_lock);
     condv_.notify_all();
   }
 
