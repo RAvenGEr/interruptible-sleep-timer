@@ -5,6 +5,7 @@
 /// \copyright Copyright (c) 2019 David Webb. Source code MIT licensed
 
 #include <atomic>
+#include <chrono>
 #include <condition_variable>
 #include <mutex>
 
