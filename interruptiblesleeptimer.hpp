@@ -23,7 +23,7 @@ public:
   bool sleep_for(const std::chrono::duration<Rep, Period> &time)
   {
     std::unique_lock<std::mutex> lock{mutex_};
-    return !condv_.wait_for(lock, time, [&] { return flag_.load(); });
+    return !condv_.wait_for(lock, time, [&] { return flag_.exchange(false, std::memory_order_release); });
   }
 
   ///
